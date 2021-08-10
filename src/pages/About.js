@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const About = () => {
   return (
-    <Container>
+    <Container >
       <CarouselTemplate />
     </Container>
   );

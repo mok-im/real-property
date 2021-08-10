@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Card, Col, Row, Container, ListGroup } from 'react-bootstrap';
 import axios from 'axios'
+import './index.scss'
 
 const CardTemplate = () => {
 
@@ -17,9 +18,10 @@ const CardTemplate = () => {
   }, [])
 
   const renderCard = stateCard.map((card) =>
-    <Col>
+    <Col >
       <Card
         style={{ width: '18rem' }}
+        className="cardholder col-sm-4 mb-4"
         key={card.id}
       >
         <Card.Img variant="top" src={card.img} />
@@ -38,7 +40,7 @@ const CardTemplate = () => {
   )
 
   return (
-    <Container>
+    <Container >
       <Row>
         {renderCard}
       </Row>
