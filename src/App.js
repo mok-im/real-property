@@ -9,7 +9,7 @@ function App() {
     <Container>
       <Navigation />
       <Home />
-      {/* <About /> */}
+      <About />
 
     </Container>
 
