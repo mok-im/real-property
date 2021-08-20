@@ -39,4 +39,6 @@ describe('Testing page About', () => {
         const house = setUp(store);
         expect(toJson(house)).toMatchSnapshot();
     });
+
 });
+

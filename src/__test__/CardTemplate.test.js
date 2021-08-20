@@ -34,4 +34,5 @@ describe('Testing component <CardTemplate />', () => {
         button.find('Card').simulate('click');
         expect(mockHistoryPush.mock.calls.length).toEqual(1);
     });
+
 });
