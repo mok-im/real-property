@@ -8,9 +8,8 @@ import { IParams, IImg } from '../types';
 import { ImgHolder } from '../styled/ImgHolder';
 
 const About: React.FC = () => {
-    const houses = useTypedSelector((state) => state.houses);
+    const houses = useTypedSelector((state) => state.house);
     const load = useTypedSelector((state) => state.loading);
-
     const { id } = useParams<IParams>();
     const dispatch = useDispatch();
 

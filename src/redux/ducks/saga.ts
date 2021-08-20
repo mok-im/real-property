@@ -1,6 +1,6 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
 import { HouseActionTypes } from '../../types';
-import { setHouses } from './actions';
+import { setHouses, setOneHouse } from './actions';
 import axios from 'axios';
 
 const url = 'https://my-json-server.typicode.com/mok-im/json-server/houses';
@@ -17,8 +17,7 @@ function* workerLoadData() {
 function* workerLoadOne({ args }: any) {
     try {
         const { data } = yield call(axios.get, url, { params: { id: args } });
-
-        yield put(setHouses(data));
+        yield put(setOneHouse(data));
     } catch (e) {
         throw new Error(e);
     }

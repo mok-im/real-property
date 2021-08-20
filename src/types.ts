@@ -1,14 +1,20 @@
 export interface HouseState {
     houses: any[];
+    house: any[];
     loading: boolean;
 }
 export enum HouseActionTypes {
     SET_HOUSES = 'SET_HOUSES',
+    SET_ONE_HOUSE = 'SET_ONE_HOUSE',
     FETCH_HOUSES = 'FETCH_HOUSES',
     FETCH_ONE_HOUSE = 'FETCH_ONE_HOUSE',
 }
 export interface SetHouseAction {
     type: HouseActionTypes.SET_HOUSES;
+    payload: any;
+}
+export interface SetOneHouseAction {
+    type: HouseActionTypes.SET_ONE_HOUSE;
     payload: any;
 }
 export interface fetchHousesAction {
@@ -20,6 +26,7 @@ export interface fetchOneHouseAction {
 export type HouseAction =
     | SetHouseAction
     | fetchHousesAction
+    | SetOneHouseAction
     | fetchOneHouseAction;
 
 export interface IHouse {

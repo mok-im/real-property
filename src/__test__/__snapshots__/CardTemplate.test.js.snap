@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing component <CardTemplate /> should render Card template 1`] = `
+<styled.div>
+  <Card
+    body={false}
+    onClick={[Function]}
+  >
+    <styled.img
+      alt="house"
+      src="https://ap.rdcpix.com/ce4305635b3d44aef2e6abe0ce8f1f93l-m507177317od-w1024_h768_x2.webp"
+    />
+    <CardBody>
+      <CardTitle>
+        House 1
+      </CardTitle>
+      <CardText>
+        Lorem1 
+      </CardText>
+      <ListGroupItem
+        active={false}
+        disabled={false}
+      >
+        Price: 
+        1000$
+      </ListGroupItem>
+      <ListGroupItem
+        active={false}
+        disabled={false}
+      >
+        Address: 
+        New York City1
+      </ListGroupItem>
+    </CardBody>
+  </Card>
+</styled.div>
+`;
