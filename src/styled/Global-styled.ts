@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import { $bgMainColor } from './_variables-styled';
+
 export const Global = createGlobalStyle`
     * {
         margin: 0;
@@ -12,6 +14,6 @@ export const Global = createGlobalStyle`
         height: 100%;
     }
     body {
-       background: linear-gradient(to bottom left, #FFFFFF, #3D5F6F);
+       background: ${$bgMainColor};
     }
 `;

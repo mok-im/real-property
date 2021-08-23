@@ -1,5 +1,6 @@
 import { applyMiddleware, createStore, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
+
 import reducer from './ducks/index';
 import { watchLoadData } from './ducks/saga';
 declare global {

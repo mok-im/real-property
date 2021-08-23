@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import { CardTemplate } from '../components/index';
 import { useDispatch } from 'react-redux';
+import { Container, Row, Col } from 'react-bootstrap';
+
+import { CardTemplate } from '../components/index';
+
 import { fetchHouses } from '../redux/ducks/actions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 

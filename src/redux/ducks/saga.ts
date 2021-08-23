@@ -1,7 +1,8 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
+import axios from 'axios';
+
 import { HouseActionTypes } from '../../types';
 import { setHouses, setOneHouse } from './actions';
-import axios from 'axios';
 
 const url = 'https://my-json-server.typicode.com/mok-im/json-server/houses';
 

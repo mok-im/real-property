@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
-import { Carousel, Container, Row, Col, ListGroup } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
+
+import { Carousel, Container, Row, Col, ListGroup } from 'react-bootstrap';
+
+import { ImgHolder } from '../styled/ImgHolder';
 import { fetchOneHouse } from '../redux/ducks/actions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 import { IParams, IImg } from '../types';
-import { ImgHolder } from '../styled/ImgHolder';
 
 const About: React.FC = () => {
     const houses = useTypedSelector((state) => state.house);

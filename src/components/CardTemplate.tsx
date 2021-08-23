@@ -1,9 +1,11 @@
 import { FC } from 'react';
 import { useHistory } from 'react-router-dom';
+
 import { Card, ListGroup } from 'react-bootstrap';
-import { CardProps } from '../types';
+
 import { CardHolder } from '../styled/CardHolder';
 import { CardImg } from '../styled/CardImg-styled';
+import { CardProps } from '../types';
 
 const CardTemplate: FC<CardProps> = ({ card }) => {
     const history = useHistory();
