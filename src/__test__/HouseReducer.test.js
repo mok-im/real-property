@@ -1,5 +1,4 @@
-import reducer from '../redux/ducks';
-import { fetchHouses } from '../redux/ducks/actions'
+import houseReducer, { fetchHouses } from '../redux/ducks/houseReducer';
 import { HouseActionTypes } from '../types'
 
 const state = [
@@ -36,7 +35,7 @@ describe('HouseReducer', () => {
             type: HouseActionTypes.SET_HOUSES,
             payload: state
         }
-        expect(reducer(initialState, action)).toEqual({
+        expect(houseReducer(initialState, action)).toEqual({
             ...initialState,
             houses: action.payload,
             loading: false
