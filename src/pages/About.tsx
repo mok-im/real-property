@@ -2,21 +2,28 @@ import React, { useEffect } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import { Carousel, Container, Row, Col, ListGroup } from 'react-bootstrap';
+import {
+    Carousel,
+    Container,
+    Row,
+    Col,
+    ListGroup,
+    Spinner,
+} from 'react-bootstrap';
 
 import { ImgHolder } from '../styled/ImgHolder';
-import { fetchOneHouse } from '../redux/ducks/actions';
+import { fetchOneHouse } from '../redux/ducks/houseReducer';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 import { IParams, IImg } from '../types';
 
 const About: React.FC = () => {
-    const houses = useTypedSelector((state) => state.house);
-    const load = useTypedSelector((state) => state.loading);
+    const houses = useTypedSelector((state) => state.property.house);
+    const loading = useTypedSelector((state) => state.property.loading);
     const { id } = useParams<IParams>();
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchOneHouse(+id));
+        dispatch(fetchOneHouse(Number(id)));
     }, [dispatch, id]);
 
     return (
@@ -24,8 +31,13 @@ const About: React.FC = () => {
             <NavLink className="btn btn-primary mb-4" to={'/'}>
                 &larr; Back
             </NavLink>
-            {load ? (
-                <h1>Loading...</h1>
+            {!loading ? (
+                <Row className="vh-100 align-items-center">
+                    <Spinner
+                        animation="border"
+                        className="mx-auto align-items-center"
+                    />
+                </Row>
             ) : (
                 houses.map((house, i) => (
                     <Row xs={1} sm={1} md={2} key={i}>
