@@ -1,8 +1,9 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
-import axios from 'axios';
 
 import { HouseActionTypes, HouseAction, HouseState } from '../../types';
+import { getHouseByAPI, getHouseById } from '../../api';
 
+// Reducer
 const initialState: HouseState = {
     houses: [],
     house: [],
@@ -23,6 +24,7 @@ export default function houseReducer(
     }
 }
 
+// Action Creators
 export const setHouses = (payload: any[]) => ({
     type: HouseActionTypes.SET_HOUSES,
     payload,
@@ -40,24 +42,15 @@ export const fetchOneHouse = (args: number) => ({
     args: args,
 });
 
-const url = 'https://my-json-server.typicode.com/mok-im/json-server/houses';
-
+// Side effects, Saga
 function* workerLoadData() {
-    try {
-        const { data } = yield call(axios.get, url);
-        yield put(setHouses(data));
-    } catch (e) {
-        throw new Error(e);
-    }
+    const data: any[] = yield call(getHouseByAPI);
+    yield put(setHouses(data));
 }
 
 function* workerLoadOne({ args }: any) {
-    try {
-        const { data } = yield call(axios.get, url, { params: { id: args } });
-        yield put(setOneHouse(data));
-    } catch (e) {
-        throw new Error(e);
-    }
+    const data: any[] = yield call(getHouseById, args);
+    yield put(setOneHouse(data));
 }
 
 export function* watchLoadData() {

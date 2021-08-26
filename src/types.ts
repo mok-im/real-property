@@ -42,10 +42,12 @@ export interface IHouse {
 export interface CardProps {
     card: IHouse;
 }
-
 export interface IParams {
     id: string;
 }
 export interface IImg {
     img: string;
+}
+export interface IData {
+    houses: IHouse[];
 }
